@@ -57,8 +57,8 @@ class MTRG(Algorithm):
 
         # Step 2. Define Component Vector
         cv = rng.uniform(self.params["bounds"][0],
-                                                 self.params["bounds"][1],
-                                                 self.params["D"])
+                        self.params["bounds"][1],
+                        self.params["D"])
 
         # Step 3. Initial Sub-Problem Populations
         populations = [Cluster(initial_population_uni(self.params["pop_size"],
@@ -78,6 +78,9 @@ class MTRG(Algorithm):
         # Step 4. Main Loop
         fe = self.params["pop_size"] * num_groups
         while fe < self.params["fitness_evaluations"]:
+
+            if self.params["verbose"]["output"] and fe % self.params["verbose"]["mod"]==0:
+                print("Best found:%.5f"%(function(cv)))
 
             # Step 4.1 Evolve Each Cluster
             for ci in populations:
