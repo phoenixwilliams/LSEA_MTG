@@ -2,5 +2,5 @@
 
 ### The file MTRG gives an example set-up of how to use the proposed algorithm for any defined objective function
 
-
+#### You can find the paper from my website https://phoenixwilliams.github.io/PersonalWebsite/Publications
 
