@@ -66,7 +66,7 @@ class MTRG(Algorithm):
                                                       [self.params["bounds"][0][grouping[i]],
                                                        self.params["bounds"][1][grouping[i]]],
                                                       rng),
-                               grouping[i]) for i in range(len(grouping))]
+                                                    grouping[i]) for i in range(len(grouping))]
 
         # Step 4. Evaluate Each Population
         for cl in populations:
@@ -80,7 +80,7 @@ class MTRG(Algorithm):
         while fe < self.params["fitness_evaluations"]:
 
             if self.params["verbose"]["output"] and fe % self.params["verbose"]["mod"]==0:
-                print("Best found:%.5f"%(function(cv)))
+                print("Best found:%.10f after %d function evaluations"%(function(cv), fe))
 
             # Step 4.1 Evolve Each Cluster
             for ci in populations:
@@ -109,5 +109,3 @@ class MTRG(Algorithm):
                 ci.set_best_soln()
 
                 set_cv(cv, populations)
-
-            print(function(cv), fe)
