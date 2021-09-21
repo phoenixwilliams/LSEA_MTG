@@ -1,7 +1,6 @@
 from Algorithm import Algorithm
 import numpy as np
 from EA_tools.population import initial_population_uni
-from EA_tools.Solutions import Solution
 from EA_tools.evaluations import dimension_replacement_evaluation
 from operator import attrgetter
 from Operators.DE import rand_1, binomial_crossover
@@ -34,11 +33,6 @@ class Cluster:
 
             if population[i].fitness <= self.population[i].fitness:
                 self.population[i] = population[i]
-
-
-class SpSolutions(Solution):
-    def __init__(self, genotype):
-        Solution.__init__(self, genotype)
 
 
 class MTRG(Algorithm):
