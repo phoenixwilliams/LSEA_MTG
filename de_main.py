@@ -14,6 +14,7 @@ def ackley(x):
 
     return -a * np.exp(-b * np.sqrt((1./d) * sum1)) - np.exp((1./d) * sum2) + a + np.exp(1.)
 
+
 if __name__ == "__main__":
     dim = 10
     bounds = [-5, 5]
